@@ -79,6 +79,7 @@ adb shell input keyevent HOME
 
 5. 配置程序
 ==========
+下载源代码。  
 将personalInfo-sample.py重命名为personalInfo.py。  
 并修改里边的信息，手机号，身份证号，群号等。  
 打开开发者模式的触摸叠加（就顶上会显示你点击的坐标）。  
@@ -88,4 +89,6 @@ adb shell input keyevent HOME
 ## 运行程序
 ==========
 一切就绪以后，你就可以运行程序。  
-程序将自动打开并截图，打开作业界面。
+powershell切换到程序目录：cd <这里替换为目录>  
+并运行: python daka.py  
+程序将自动打开并截图，然后打开作业界面。
