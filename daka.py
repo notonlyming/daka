@@ -26,6 +26,11 @@ os.system('adb shell settings put secure location_mode 3')
 printNumberPrompt('返回home')
 os.system('adb shell input keyevent HOME')
 
+printNumberPrompt('滑动到最后一页')
+for i in range(2):
+    os.system('adb shell input swipe 740 1550 400 1550 25')
+    time.sleep(0.3)
+
 printNumberPrompt('打开完美校园')
 click(185, 265)
 
@@ -44,8 +49,8 @@ for i in range(2):
     time.sleep(0.3)
 
 printNumberPrompt('点击单选项')
-click(150, 370)
-click(150, 1800)
+click(150, 460)
+click(150, 1840)
 
 #检查是否有错
 if input('检查是否有错，输入y继续：') != 'y':
@@ -142,6 +147,9 @@ os.system('adb shell am start -n com.tencent.mobileqq/.activity.SplashActivity')
 printNumberPrompt('等待QQ加载')
 time.sleep(3)
 
+printNumberPrompt('关闭定位')
+os.system('adb shell settings put secure location_mode 3')
+
 printNumberPrompt('点击搜索框')
 click(550, 330)
 
@@ -150,6 +158,9 @@ time.sleep(1)
 
 printNumberPrompt('输入群号')
 os.system('adb shell input text "{}"'.format(groupNumber))
+
+printNumberPrompt('等待搜索界面加载')
+time.sleep(0.5)
 
 printNumberPrompt('进入群')
 click(455, 480)
@@ -167,7 +178,7 @@ printNumberPrompt('点击群作业')
 click(760, 1150)
 
 printNumberPrompt('等待作业页面加载完毕3s')
-time.sleep(3)
+time.sleep(5)
 
 printNumberPrompt('点击第一个作业')
 click(760, 579)
